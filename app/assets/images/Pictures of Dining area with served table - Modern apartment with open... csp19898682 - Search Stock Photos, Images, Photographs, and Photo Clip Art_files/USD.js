@@ -1,0 +1,1 @@
+(function(globals){var django=globals.django||(globals.django={});django.CURRENCY_CODE="USD";django.PRICE_PREFIX="$";django.PRICE_SUFFIX="";django.format_price=function(price,precision){precision=(precision||((django.CURRENCY_CODE=='JPY')?0:2));return django.PRICE_PREFIX+django.format_number(price,precision)+django.PRICE_SUFFIX;};globals.format_price=django.format_price;}(this));

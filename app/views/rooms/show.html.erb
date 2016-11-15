@@ -1,0 +1,14 @@
+<div class="floor-bottom">
+ <% if @floor.rooms %>
+          <% @floor.rooms.each do |room| %>
+            <div class="room">
+              <div class="user-name">
+                <%= @floor.name %>
+              </div>
+              <div class="floor-content">
+               <%= link_to (image_tag room.image.url(:medium), class:'img-responsive') %>
+              </div>
+              </div>
+              <%end%> 
+          <% end %>
+	</div>

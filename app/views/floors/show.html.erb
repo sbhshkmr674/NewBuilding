@@ -1,0 +1,56 @@
+ <div class="buildings-wrapper row">
+ <div class="floor-bottom">
+ <% if @house.floors %>
+          <% @house.floors.each do |floor| %>
+            <div class="floor">
+              <div class="user-name">
+                <%= floor.name %>
+              </div>
+              <div class="floor-content">
+               <%= link_to (image_tag floor.image.url(:medium), class:'img-responsive')%>
+              </div>
+              </div>
+              <%end%> 
+          <% end %>
+
+
+    <% if @floor.rooms %>
+         <% @floor.rooms.each do |room|%>
+           <div class="room">
+             <div class="user-name">
+               
+              </div>
+              <div class="room-content">
+                 <%= link_to (image_tag room.image.url(:medium), class:'img-responsive'),house_floor_rooms_path(@house.id, @floor.id, @room.id)%>
+              </div>
+             </div>
+          <%end %>
+        <% end %>
+	</div>
+  <% if current_user.admin? %>
+	<div class="form-wrapper">
+         <%= form_for [@house, @floor,@floor.rooms.new], html: { class: 'form-horizontal', multipart: true } do |f| %>
+          <div class="form-group">
+             <div class="col-lg-3">
+                <%= f.label :room_number %>
+             </div>
+             <div class="col-lg-9">
+                <%= f.text_field :room_number%>
+             </div>
+          </div>
+
+          <div class="form-group">
+             <div class="col-lg-3">
+                <%= f.label :image %>
+             </div>
+             <div class="col-lg-9">
+                <%= f.file_field :image %>
+             </div>
+          </div>
+          <div class="form-group text-center">
+          <%= f.button :submit, class: 'btn btn-success' %>
+        </div>
+      <% end %>
+      <% end %>
+    </div>
+</div>

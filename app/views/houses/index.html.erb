@@ -1,0 +1,19 @@
+<h1> Houses</h1>
+<div class="buildings-wrapper row">
+  <% @houses.each do |house| %>
+    <div class="building">
+      <div class="building-head">
+        <div class="name">
+         <%= "#{house.name} Apartment :(("%>
+        </div>
+         <p class="descreption">
+        <%= house.name %>
+      </p>
+      </div>
+      <div class="image center-block">
+        <%= link_to (image_tag house.image.url(:medium), class:'img-responsive'),house_path(house) %>
+      </div>
+      
+    </div>
+  <% end %>
+</div>

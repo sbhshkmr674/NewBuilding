@@ -1,0 +1,12 @@
+<% if @houses.floors %>
+          <% @houses.floors.each do |floor| %>
+            <div class="floor">
+              <div class="user-name">
+                <%= floor.floor_name %>
+              </div>
+              <div class="floor-content">
+               <%= link_to (image_tag floor.image.url(:medium), class:'img-responsive'), house_floor_path(@house.id, @floor.id) %>
+              </div>
+              </div>
+              <%end%> 
+          <% end %>
