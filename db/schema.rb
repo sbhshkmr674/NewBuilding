@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115095220) do
+ActiveRecord::Schema.define(version: 20161116050106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,10 @@ ActiveRecord::Schema.define(version: 20161115095220) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "houses", ["user_id"], name: "index_houses_on_user_id", using: :btree
 
   create_table "rooms", force: :cascade do |t|
     t.integer  "floor_id"
@@ -106,5 +109,6 @@ ActiveRecord::Schema.define(version: 20161115095220) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "floors", "houses"
+  add_foreign_key "houses", "users"
   add_foreign_key "rooms", "floors"
 end

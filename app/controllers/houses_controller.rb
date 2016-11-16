@@ -4,11 +4,13 @@ class HousesController < ApplicationController
 	end
 
 	def new
-		@house=House.new
+		#@user=User.find(params[:id])
+		@house=current_user.houses.build
+		#@house=House.new
 	end
 	 
 	def create
-	 	@house=House.create(house_params)
+	 	@house=current_user.houses.build(house_params)
 
 	 	if @house.save
 	 		flash[:success]="You have successfully created the Building"
