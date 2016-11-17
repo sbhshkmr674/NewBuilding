@@ -82,4 +82,5 @@ Rails.application.configure do
                    secret_access_key: 'DGYKyGWwPtcIgJJMKra2enuhttmLoMNZ1LJaI8+I'},
   bucket: 'photoglaxy',
   s3_region: 'Mumbai'
+}
 end
