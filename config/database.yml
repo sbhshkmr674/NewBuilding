@@ -22,10 +22,14 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  access_key_id: 'AKIAJOG5INHQ4B7RGT4A'
+  secret_access_key: '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'
 
 development:
   <<: *default
   database: Building_development
+  access_key_id: 'AKIAJOG5INHQ4B7RGT4A'
+  secret_access_key: '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'
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,6 +64,8 @@ development:
 test:
   <<: *default
   database: Building_test
+  access_key_id: 'AKIAJOG5INHQ4B7RGT4A'
+  secret_access_key: 'DGYKyGWwPtcIgJJMKra2enuhttmLoMNZ1LJaI8+I'
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,3 +91,5 @@ production:
   database: Building_production
   username: Building
   password: <%= ENV['BUILDING_DATABASE_PASSWORD'] %>
+  access_key_id: 'AKIAJOG5INHQ4B7RGT4A'
+  secret_access_key: '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'

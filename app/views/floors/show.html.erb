@@ -7,7 +7,7 @@
                 <%= floor.name %>
               </div>
               <div class="floor-content">
-               <%= link_to (image_tag floor.image.url(:medium), class:'img-responsive')%>
+               <%= link_to (image_tag floor.image.url(:thumb), class:'img-responsive')%>
               </div>
               </div>
               <%end%> 
@@ -21,7 +21,7 @@
                
               </div>
               <div class="room-content">
-                 <%= link_to (image_tag room.image.url(:medium), class:'img-responsive'),house_floor_rooms_path(@house.id, @floor.id, @room.id)%>
+                 <%= link_to (image_tag room.image.url(:thumb), class:'img-responsive'),house_floor_rooms_path(@house.id, @floor.id, @room.id)%>
               </div>
              </div>
           <%end %>
