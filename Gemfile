@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.5'  
 gem 'devise'
-gem "paperclip", "~> 4.2"
-gem 'aws-sdk', '~> 1.6'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 gem 'activeadmin', github: 'activeadmin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
